@@ -1,14 +1,19 @@
 require 'net/http'
 require 'json'
+require './lib/services/postcodes_cache'
 
 module Services
   class PostcodesIo
-    def initialize(base_url: nil)
+    def initialize(base_url: nil, cache:)
       @base_url =  base_url || ENV.fetch('POSTCODES_IO_BASE_URL')
+      @cache = cache
     end
 
     def find(postcode)
       postcode = normalised_postcode(postcode)
+      cached_response = @cache.read(postcode)
+
+      return cached_response unless cached_response.nil?
 
       parse_response get_request(postcode)
     end
@@ -37,6 +42,8 @@ module Services
         lsoa: json.dig('result', 'lsoa'),
         postcode: postcode
       }
+
+      @cache.write(postcode, response)
 
       response
     end

@@ -3,7 +3,9 @@ require './lib/services/postcodes_io'
 
 module Services
   RSpec.describe PostcodesIo do
-    subject(:service) { described_class.new(base_url: base_url) }
+    subject(:service) { described_class.new(base_url: base_url, cache: cache) }
+
+    let(:cache) { PostcodesCache.new }
 
     let(:base_url) { 'http://api.postcodes.io' }
     let(:uri) { URI("#{base_url}/postcodes/#{postcode}") }
@@ -108,6 +110,16 @@ module Services
               postcode: 'SE17QA'
             }
           )
+        end
+
+        context 'and another request for the same postcode is done' do
+          it 'should only do the http request once' do
+            allow(Net::HTTP).to receive(:get_response).once
+              .with(uri).and_return(response)
+
+            service.find(postcode)
+            service.find(postcode)
+          end
         end
       end
 
