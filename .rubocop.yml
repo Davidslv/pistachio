@@ -2,6 +2,7 @@ Style/Documentation:
   Enabled: false
 
 AllCops:
+  SuggestExtensions: false
   Exclude:
     - playground.rb
     - 'spec/**/*'

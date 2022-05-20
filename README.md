@@ -33,9 +33,25 @@ $ bundle install
 This project uses rspec for testing.
 
 ```bash
-$ rspec
+$ bundle exec rspec
 ```
 
+## Linting
+
+This project uses rubocop for linting.
+
+```bash
+$ bundle exec rubocop
+```
+
+## Default rake task
+
+This project uses rake and it has been configured to run by default
+both rubocop and rspec.
+
+```bash
+$ bundle exec rake
+```
 
 ## Console
 
