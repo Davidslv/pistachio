@@ -60,7 +60,7 @@ module Services
           {
             result: {
               lsoa: 'Southwark 034A',
-              postcode: 'SE1 7QD',
+              postcode: 'SE1 7QD'
             },
             status: 200
           }
@@ -90,9 +90,9 @@ module Services
           {
             result: {
               lsoa: 'Lambeth 036B',
-              postcode: 'SE1 7QA',
+              postcode: 'SE1 7QA'
             },
-            status: 200,
+            status: 200
           }
         end
 

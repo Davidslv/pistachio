@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 require 'net/http'
 require 'json'
 require './lib/services/postcodes_cache'
 
 module Services
   class PostcodesIo
-    def initialize(base_url: nil, cache:)
-      @base_url =  base_url || ENV.fetch('POSTCODES_IO_BASE_URL')
+    def initialize(cache:, base_url: nil)
       @cache = cache
+      @base_url = base_url || ENV.fetch('POSTCODES_IO_BASE_URL')
     end
 
     def find(postcode)
@@ -31,7 +33,7 @@ module Services
     def parse_response(response)
       json = JSON.parse(response.body)
 
-      response.code === '200' ? success_json(json) : error_json(json)
+      response.code == '200' ? success_json(json) : error_json(json)
     end
 
     def success_json(json)
