@@ -7,3 +7,4 @@ AllCops:
     - playground.rb
     - 'spec/**/*'
     - Brewfile
+    - 'bin/**/*'
