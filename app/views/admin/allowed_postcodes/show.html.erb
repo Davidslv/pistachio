@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @admin_allowed_postcode %>
+
+<div>
+  <%= link_to "Edit this allowed postcode", edit_admin_allowed_postcode_path(@admin_allowed_postcode) %> |
+  <%= link_to "Back to allowed postcodes", admin_allowed_postcodes_path %>
+
+  <%= button_to "Destroy this allowed postcode", @admin_allowed_postcode, method: :delete %>
+</div>

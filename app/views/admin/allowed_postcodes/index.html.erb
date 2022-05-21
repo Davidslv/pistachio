@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Allowed postcodes</h1>
+
+<div id="admin_allowed_postcodes">
+  <% @admin_allowed_postcodes.each do |admin_allowed_postcode| %>
+    <%= render admin_allowed_postcode %>
+    <p>
+      <%= link_to "Show this allowed postcode", admin_allowed_postcode %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New allowed postcode", new_admin_allowed_postcode_path %>
