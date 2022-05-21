@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Allowed areas</h1>
+
+<div id="admin_allowed_areas">
+  <% @admin_allowed_areas.each do |admin_allowed_area| %>
+    <%= render admin_allowed_area %>
+    <p>
+      <%= link_to "Show this allowed area", admin_allowed_area %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New allowed area", new_admin_allowed_area_path %>

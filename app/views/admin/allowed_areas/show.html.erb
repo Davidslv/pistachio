@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @admin_allowed_area %>
+
+<div>
+  <%= link_to "Edit this allowed area", edit_admin_allowed_area_path(@admin_allowed_area) %> |
+  <%= link_to "Back to allowed areas", admin_allowed_areas_path %>
+
+  <%= button_to "Destroy this allowed area", @admin_allowed_area, method: :delete %>
+</div>
