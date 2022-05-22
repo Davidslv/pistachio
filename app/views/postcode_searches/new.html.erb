@@ -1,9 +1,14 @@
 <h1>Postcode Search</h1>
 
+<% flash.each do |type, msg| %>
+  <div class="alert alert-<%=type%>">
+    <%= msg %>
+  </div>
+<% end %>
+
 <%= form_tag(postcode_searches_path, method: :post) do %>
   <%= label_tag(:postcode, 'Postcode:') %>
   <%= text_field_tag(:postcode, params[:postcode]) %>
-
 
   <%= submit_tag('Check postcode') %>
 <% end %>
