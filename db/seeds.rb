@@ -6,3 +6,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Admin::AllowedArea.create(area: 'Southwark')
+Admin::AllowedArea.create(area: 'Lambeth')
+
+Admin::AllowedPostcode.create(postcode: 'SH241AA')
+Admin::AllowedPostcode.create(postcode: 'SH241AB')
