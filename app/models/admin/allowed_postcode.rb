@@ -7,5 +7,13 @@ module Admin
     validates :postcode, presence: true
     validates :postcode, uniqueness: true
     validates_format_of :postcode, with: POSTCODE_REGEX
+
+    before_save { normalise_postcode }
+
+    private
+
+    def normalise_postcode
+      postcode.downcase!.delete!(' ')
+    end
   end
 end
