@@ -9,6 +9,7 @@ gem 'sprockets-rails'
 gem 'sqlite3', '~> 1.4'
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'pry'
   gem 'rspec'
   gem 'rspec-rails', '~> 5.0.0'
