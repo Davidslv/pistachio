@@ -10,5 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_21_150831) do
+  create_table "admin_allowed_areas", force: :cascade do |t|
+    t.string "area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["area"], name: "index_admin_allowed_areas_on_area", unique: true
+  end
+
+  create_table "admin_allowed_postcodes", force: :cascade do |t|
+    t.string "postcode"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["postcode"], name: "index_admin_allowed_postcodes_on_postcode"
+  end
+
 end

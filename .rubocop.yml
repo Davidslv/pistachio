@@ -8,3 +8,5 @@ AllCops:
     - 'spec/**/*'
     - Brewfile
     - 'bin/**/*'
+    - db/schema.rb
+    - db/migrate/**/*.rb

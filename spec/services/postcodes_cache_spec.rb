@@ -1,5 +1,4 @@
-require 'spec_helper'
-require './lib/services/postcodes_cache'
+require 'rails_helper'
 
 module Services
   describe PostcodesCache do
