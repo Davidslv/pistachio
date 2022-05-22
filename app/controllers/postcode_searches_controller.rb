@@ -2,8 +2,10 @@ class PostcodeSearchesController < ApplicationController
   def new; end
 
   def create
-    response = postcodes_io.find(normalised_postcode)
-    message = ResponseLogic.new(normalised_postcode, response).call
+    message = ResponseLogic.new(
+      normalised_postcode,
+      postcodes_io.find(normalised_postcode)
+    ).call
 
     redirect_to(root_url, flash: message)
   end

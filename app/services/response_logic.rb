@@ -1,5 +1,5 @@
 class ResponseLogic
-  def initialize(postcode)
+  def initialize(postcode, response)
     @postcode = postcode
     @response = response
   end
@@ -35,10 +35,14 @@ class ResponseLogic
   end
 
   def find_by_postcode(postcode)
+    return false unless postcode.present?
+
     Admin::AllowedPostcode.find_by(postcode: postcode)
   end
 
   def find_by_area(area)
+    return false unless area.present?
+
     Admin::AllowedArea.find_by(area: area)
   end
 end
