@@ -80,7 +80,7 @@ both rubocop and rspec.
 $ bundle exec rake
 ```
 
-## Console
+## Console
 
 In case you need access to the console, here's an example of usage.
 
@@ -111,6 +111,6 @@ We are using the Postcodes.io REST API as our source for data. The service area 
 3. Any postcode not in the LSOA allowed list or the Postcode allowed list is not servable.
 
 
-## Video
+## Video
 
 https://user-images.githubusercontent.com/136777/169700653-0879a901-f7fd-42df-a0a1-2dc545498a0e.mov
