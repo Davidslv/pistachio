@@ -31,7 +31,7 @@ $ rails db:prepare
 $ rails db:seed
 ```
 
-## Start server
+## Start server
 
 ```
 $ rails server
@@ -39,23 +39,22 @@ $ rails server
 
 Open browser on `http://localhost:3000/`
 
-## Admin
+## Admin
 
 You will need the following for basic authentication:
 
 Username: SH24
 password: SH24PASS
 
-### To manage postcodes
+### To manage postcodes
 
 Open browser on `http://localhost:3000/admin/allowed_postcodes`
 
-### To manage areas (LSOA)
+### To manage areas (LSOA)
 
 Open browser on `http://localhost:3000/admin/allowed_areas`
 
-
-## Testing
+## Testing
 
 This project uses rspec for testing.
 
@@ -64,7 +63,7 @@ $ bin/rails db:environment:set RAILS_ENV=test
 $ bundle exec rspec
 ```
 
-## Linting
+## Linting
 
 This project uses rubocop for linting.
 
