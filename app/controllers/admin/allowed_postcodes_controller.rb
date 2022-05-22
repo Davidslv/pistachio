@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class AllowedPostcodesController < ApplicationController
+  class AllowedPostcodesController < BaseController
     before_action :set_admin_allowed_postcode, only: %i[show edit update destroy]
 
     # GET /admin/allowed_postcodes
@@ -25,7 +25,7 @@ module Admin
       @admin_allowed_postcode = Admin::AllowedPostcode.new(admin_allowed_postcode_params)
 
       if @admin_allowed_postcode.save
-        redirect_to @admin_allowed_postcode, notice: 'Allowed postcode was successfully created.'
+        redirect_to @admin_allowed_postcode, notice: 'Postcode was successfully created.'
       else
         render :new, status: :unprocessable_entity
       end
@@ -34,7 +34,7 @@ module Admin
     # PATCH/PUT /admin/allowed_postcodes/1
     def update
       if @admin_allowed_postcode.update(admin_allowed_postcode_params)
-        redirect_to @admin_allowed_postcode, notice: 'Allowed postcode was successfully updated.'
+        redirect_to @admin_allowed_postcode, notice: 'Postcode was successfully updated.'
       else
         render :edit, status: :unprocessable_entity
       end
@@ -43,7 +43,7 @@ module Admin
     # DELETE /admin/allowed_postcodes/1
     def destroy
       @admin_allowed_postcode.destroy
-      redirect_to admin_allowed_postcodes_url, notice: 'Allowed postcode was successfully destroyed.'
+      redirect_to admin_allowed_postcodes_url, notice: 'Postcode was successfully destroyed.'
     end
 
     private

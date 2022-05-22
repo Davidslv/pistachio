@@ -2,7 +2,7 @@
 
 module Admin
   class AllowedPostcode < ApplicationRecord
-    POSTCODE_REGEX = /\A[A-Z]{1,2}[0-9][A-Z0-9]? ?[0-9][A-Z]{2}\z/.freeze
+    POSTCODE_REGEX = /\A[a-zA-Z]{1,2}[0-9][a-zA-Z0-9]? ?[0-9][a-zA-Z]{2}\z/.freeze
 
     validates :postcode, presence: true
     validates :postcode, uniqueness: true
@@ -13,7 +13,7 @@ module Admin
     private
 
     def normalise_postcode
-      postcode.downcase!.delete!(' ')
+      self.postcode = postcode.delete(' ').downcase
     end
   end
 end

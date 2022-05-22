@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class AllowedAreasController < ApplicationController
+  class AllowedAreasController < BaseController
     before_action :set_admin_allowed_area, only: %i[show edit update destroy]
 
     # GET /admin/allowed_areas
