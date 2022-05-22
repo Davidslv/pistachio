@@ -1,5 +1,4 @@
-require 'spec_helper'
-require './lib/services/postcodes_io'
+require 'rails_helper'
 
 module Services
   RSpec.describe PostcodesIo do
