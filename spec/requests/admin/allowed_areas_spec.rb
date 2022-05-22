@@ -1,13 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe "/admin/allowed_areas", type: :request do
-  let(:valid_attributes) {
-    { area: 'Southwark 034A'}
-  }
+  let(:valid_attributes) { { area: 'southwark'} }
 
-  let(:invalid_attributes) {
-    { area: '' }
-  }
+  let(:invalid_attributes) { { area: '' } }
 
   describe "GET /index" do
     it "renders a successful response" do
@@ -72,16 +68,14 @@ RSpec.describe "/admin/allowed_areas", type: :request do
 
   describe "PATCH /update" do
     context "with valid parameters" do
-      let(:new_attributes) {
-        { area: 'Lambeth 036B' }
-      }
+      let(:new_attributes) { { area: 'lambeth' } }
 
       it "updates the requested admin_allowed_area" do
         allowed_area = Admin::AllowedArea.create! valid_attributes
         patch admin_allowed_area_url(allowed_area), params: { admin_allowed_area: new_attributes }
         allowed_area.reload
 
-        expect(allowed_area.area).to eq('Lambeth 036B')
+        expect(allowed_area.area).to eq('lambeth')
       end
 
       it "redirects to the admin_allowed_area" do

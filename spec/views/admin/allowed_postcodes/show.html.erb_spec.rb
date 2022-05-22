@@ -9,6 +9,6 @@ RSpec.describe "admin/allowed_postcodes/show", type: :view do
 
   it "renders attributes in <p>" do
     render
-    expect(rendered).to match(/SH24 1AB/)
+    expect(rendered).to match(/sh241ab/)
   end
 end

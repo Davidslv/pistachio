@@ -5,6 +5,14 @@ module Admin
     validates :area, presence: true
     validates :area, uniqueness: true
 
-    before_save { area.downcase! }
+    before_save { normalised_area }
+
+    private
+
+    def normalised_area
+      return if area.nil?
+
+      self.area = area.split(' ').first.downcase
+    end
   end
 end

@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "/admin/allowed_postcodes", type: :request do
-  let(:valid_attributes) {
-    { postcode: 'SH24 1AA'}
-  }
+  let(:valid_attributes) { { postcode: 'SH24 1AA'} }
 
   let(:invalid_attributes) {
     { postcode: 'SH24 1AAB'}
@@ -11,6 +9,7 @@ RSpec.describe "/admin/allowed_postcodes", type: :request do
 
   describe "GET /index" do
     it "renders a successful response" do
+
       Admin::AllowedPostcode.create! valid_attributes
       get admin_allowed_postcodes_url
       expect(response).to be_successful
@@ -53,7 +52,7 @@ RSpec.describe "/admin/allowed_postcodes", type: :request do
       it "redirects to the created admin_allowed_postcode" do
         post admin_allowed_postcodes_url, params: { admin_allowed_postcode: valid_attributes }
 
-        resource = Admin::AllowedPostcode.find_by(postcode: 'SH24 1AA')
+        resource = Admin::AllowedPostcode.find_by(postcode: 'sh241aa')
 
         expect(response).to redirect_to(admin_allowed_postcode_url(resource))
       end
@@ -85,7 +84,7 @@ RSpec.describe "/admin/allowed_postcodes", type: :request do
         patch admin_allowed_postcode_url(allowed_postcode), params: { admin_allowed_postcode: new_attributes }
         allowed_postcode.reload
 
-        expect(allowed_postcode.postcode).to eq('SE1 7QD')
+        expect(allowed_postcode.postcode).to eq('se17qd')
       end
 
       it "redirects to the admin_allowed_postcode" do

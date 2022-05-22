@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostcodeSearchesController < ApplicationController
   def new; end
 
@@ -13,7 +15,7 @@ class PostcodeSearchesController < ApplicationController
   private
 
   def normalised_postcode
-    permitted_params.dig(:postcode).delete(' ').downcase
+    permitted_params[:postcode].delete(' ').downcase
   end
 
   def permitted_params
